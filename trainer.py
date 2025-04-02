@@ -28,7 +28,7 @@ class Trainer:
 
         self.model = ContrastiveGNN(input_dim, hidden_dim, output_dim).to(device)
         self.optimizer = optim.Adam(self.model.parameters(), lr)
-        self.contrastive_loss_fn = ContrastiveLoss()
+        self.contrastive_loss_fn = contrastiveLoss()
         self.dataloader = DataLoader(graphs, batch_size=batch_size, shuffle=True)
 
     def train(self):
