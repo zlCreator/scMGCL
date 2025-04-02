@@ -8,8 +8,8 @@ import scanpy as sc
 adata_atac = anndata.read_h5ad('ATAC.h5ad')
 adata_rna = anndata.read_h5ad('RNA.h5ad')
 
-adata_atac.obs['source'] == 'ATAC'
-adata_rna.obs['source'] == 'RNA'
+adata_atac.obs['source'] = 'ATAC'
+adata_rna.obs['source'] = 'RNA'
 
 
 adata = adata_atac.concatenate(adata_rna,join='inner')
@@ -33,10 +33,10 @@ results = evaluate_model(z_rna, z_atac, rna_cell_types, atac_cell_types, integra
 
 # UMAP visualization
 sc.set_figure_params(dpi=400, fontsize=10)
-sc.pp.neighbors(integrated,n_neighbors=30)
+sc.pp.neighbors(integrated,use_rep='integrated_embeddings')
 sc.tl.umap(integrated,min_dist=0.1)
 
-sc.pl.umap(integrated, color=['dataset','cell_type'],title=['',''],wspace=0.3, legend_fontsize=10)
+sc.pl.umap(integrated, color=['source','cell_type'],title=['',''],wspace=0.3, legend_fontsize=10)
 
 # save results
 integrated.write('scMGCL_integrated.h5ad')
