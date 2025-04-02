@@ -9,9 +9,9 @@ def preprocess_data(
         n_components=40
         ):
     # load data
-    adata_combined = anndata.read_h5ad(adata)
-    rna_data = adata_combined.obs['source'] == 'RNA'
-    atac_data = adata_combined.obs['source'] == 'ATAC'
+    adata_combined = adata
+    rna_data = adata_combined[adata_combined.obs['source'] == 'RNA']
+    atac_data = adata_combined[adata_combined.obs['source'] == 'ATAC']
 
     # Preprocessing of RNA
     sc.pp.normalize_total(rna_data)
