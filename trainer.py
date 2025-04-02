@@ -2,7 +2,7 @@ import torch
 import torch.optim as optim
 from torch_geometric.loader import DataLoader
 from model import ContrastiveGNN
-from contrastive_loss import ContrastiveLoss
+from contrastive_loss import contrastiveLoss
 import numpy as np
 
 class Trainer:
