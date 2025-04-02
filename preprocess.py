@@ -1,5 +1,7 @@
 import scanpy as sc
 from sklearn.decomposition import PCA
+import anndata
+
 def preprocess_data(
         adata, 
         n_top=2000, 
