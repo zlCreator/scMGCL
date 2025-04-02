@@ -1,7 +1,8 @@
 import numpy as np
-from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score, f1_score, silhouette_score
+from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score, f1_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.neighbors import NearestNeighbors
+from uniport.metrics import silhouette
 import scipy
 
 def batch_entropy_mixing_score(
@@ -72,10 +73,10 @@ def evaluate_model(
     f1 = f1_score(atac_cell_types, pred_atac_cell_types, average='micro')
 
     # Batch Entropy
-    batch_entropy = batch_entropy_mixing_score(adata_combined.obsm['embedding'], adata_combined.obs['source'])
+    batch_entropy = batch_entropy_mixing_score(adata_combined.obsm['integrated_embeddings'], adata_combined.obs['source'])
 
     # Silhouette Score
-    silhouette = silhouette_score(adata_combined.obsm['embedding'], adata_combined.obs['cell_type'])
+    sil = silhouette(adata_combined.obsm['integrated_embeddings'], adata_combined.obs['cell_type'])
 
 
     # total metrics
@@ -87,7 +88,7 @@ def evaluate_model(
     print(f'F1: {f1}')
     print(f'SUM: {sum_evl}')
     print(f'Batch Entropy: {batch_entropy}')
-    print(f'Silhouette: {silhouette}')
+    print(f'Silhouette: {sil}')
 
     return {
         'ARI': ari,
