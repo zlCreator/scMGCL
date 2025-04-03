@@ -5,6 +5,8 @@ graphs, where each modality’s graph structure serves as an augmentation for th
 methods demonstrates that scMGCL outperforms others in cell-type clustering, label transfer accuracy, and preservation of marker gene correlations. Additionally, scMGCL significantly improves computational efficiency, reducing runtime and memory usage.
 The method’s effectiveness is further validated through extensive analyses of cell-type similarity and functional consistency, providing a powerful tool for multi-omics data exploration.
 
+![](./Method-fig.pdf)
+
 # Author
 Zhenglong Cheng, Risheng Lu, Shixiong Zhang
 
