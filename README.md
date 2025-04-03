@@ -1,5 +1,12 @@
 # scMGCL
-scMGCL: a graph contrastive learning method for integrating scRNA-seq and scATAC-seq data.
+Single-cell multi-omics data integration is essential for understanding cellular states and disease mechanisms, yet integrating heterogeneous data modalities remains a challenge. We present
+scMGCL, a graph contrastive learning framework for robust integration of single-cell ATACseq and RNA-seq data. Our approach leverages self-supervised learning on cell-cell similarity
+graphs, where each modality’s graph structure serves as an augmentation for the other. This
+cross-modality contrastive paradigm enables the learning of biologically meaningful, shared representations while preserving modality-specific features. Benchmarking against state-of-the-art
+methods demonstrates that scMGCL outperforms others in cell-type clustering, label transfer
+accuracy, and preservation of marker gene correlations. Additionally, scMGCL significantly
+improves computational efficiency, reducing runtime and memory usage. The method’s effectiveness is further validated through extensive analyses of cell-type similarity and functional
+consistency, providing a powerful tool for multi-omics data exploration.
 
 # Author
 Zhenglong Cheng, Risheng Lu, Shixiong Zhang
