@@ -4,7 +4,7 @@ from preprocess import preprocess_data
 from graph_construct import create_graphs
 from trainer import Trainer
 
-def scMGCL(
+def run(
         adata,
         n_components=30,
         hidden_dim=300,
