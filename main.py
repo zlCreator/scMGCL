@@ -29,7 +29,7 @@ z_atac=ATAC.obsm['integrated_embeddings']
 rna_cell_types=RNA.obs['cell_type']
 atac_cell_types=ATAC.obs['cell_type']
 
-results = evaluate_model(z_rna, z_atac, rna_cell_types, atac_cell_types, integrated)
+results = evaluate_metrics(z_rna, z_atac, rna_cell_types, atac_cell_types, integrated)
 
 # UMAP visualization
 sc.set_figure_params(dpi=400, fontsize=10)
