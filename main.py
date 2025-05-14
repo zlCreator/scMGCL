@@ -1,5 +1,5 @@
 import anndata
-from scMGCL import scMGCL
+from scMGCL import run
 from evaluate_metrics import evaluate_model
 import scanpy as sc
 
@@ -18,7 +18,7 @@ cell_type='cell_type'
 adata.obs['cell_type']=adata.obs[f'{cell_type}']
 
 # the scMGCL function is called to return the trained adata directly
-integrated = scMGCL(adata)
+integrated = run(adata)
 
 RNA=integrated[integrated.obs['source'] == 'RNA']
 ATAC=integrated[integrated.obs['source'] == 'ATAC']
