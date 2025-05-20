@@ -5,7 +5,7 @@ graphs, where each modality’s graph structure serves as an augmentation for th
 methods demonstrates that scMGCL outperforms others in cell-type clustering, label transfer accuracy, and preservation of marker gene correlations. Additionally, scMGCL significantly improves computational efficiency, reducing runtime and memory usage.
 The method’s effectiveness is further validated through extensive analyses of cell-type similarity and functional consistency, providing a powerful tool for multi-omics data exploration.
 
-![image](https://github.com/zlCreator/scMGCL/blob/main/Method_overview.png)
+![image]([https://github.com/zlCreator/scMGCL/blob/main/Method_overview.png](https://github.com/zlCreator/scMGCL/blob/main/Method_overview.png))
 
 # Data
 The required input files are scRNA-seq files in the `.h5ad` format and scATAC-seq files with gene activity matrices in the `.h5ad` format. Example files can be downloaded through the following links:
